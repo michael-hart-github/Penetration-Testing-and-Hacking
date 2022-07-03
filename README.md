@@ -122,16 +122,18 @@ You can use this resource [here](https://fedoraproject.org/wiki/MinGW/Tutorial#C
 Next is the Hyperion encryption program. We will be downloading this from the web and compiling it from source using our newly installed ming C compiler. 
 However first things first the version in the book is no longer in use so use this command instead to download the 1.2 version:
 
-`wget https://github.com/nullsecuritynet/tools/raw/master/binary/hyperion/release/Hyperion-1.2.zip`
+`wget https://github.com/nullsecuritynet/tools/raw/master/binary/hyperion/release/Hyperion-2.3.1.zip`
 
 That should download to your root directory or your Downloads directory. Be sure that you locate which directory it is and move to that directory in the terminal 
 before the next step which is unzipping the file.
 
-`unzip Hyperion-1.2.zip`
+`unzip Hyperion-2.3.1.zip`
 
-Now we will use the Ming C Compiler to compile everything like so
+Now we will use make to compile everything like so
 
-`i686-w64-mingw32-c++ Hyperion-1.2/Src/Crypter/*.cpp -o hyperion.exe`
+`cd C:\Hyperion-2.3.1`
+
+`mingw32-make -f Makefile hyperion.exe`
 
 It will take a few seconds but if everything compiles correctly you should get a blank prompt waiting for your next command in the terminal. 
 
